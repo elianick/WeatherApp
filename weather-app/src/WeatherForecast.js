@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import WeatherCard from "./WeatherCard";
 import {
@@ -47,6 +48,7 @@ class WeatherForecast extends Component {
                 })
             )
         })
+        this.props.modifyCity(response.data.city.name);
         //console.log(this.state);
     }
 
@@ -136,6 +138,7 @@ class WeatherForecast extends Component {
         }else{
             this.loadCityByCurrentLocation();
         }
+        
     }
 
     render() {
@@ -181,5 +184,8 @@ class WeatherForecast extends Component {
 
 }
 
+WeatherForecast.propTypes = {
+    modifyCity: PropTypes.func.isRequired
+};
 
 export default WeatherForecast;
