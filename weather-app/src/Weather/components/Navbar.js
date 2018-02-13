@@ -6,7 +6,7 @@ class Navigation extends React.PureComponent<{}> {
         return (<Navbar>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="#">Weather App</a>
+                    <a href="/">Weather App</a>
                 </Navbar.Brand>
             </Navbar.Header>
             <Nav>
