@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from "react-bootstrap";
 
+
+
 class WeatherCard extends Component {
 
-
-
     render() {
-        const {props: {weather}} = this;
+        const { props: { weather } } = this;
         const date = new Date(weather.date * 1000);
         const title = (<span>
-            <img alt="forecast" height="32" src={`http://openweathermap.org/img/w/${weather.icon}.png`}/>
+            <img alt="forecast" height="32" src={`http://openweathermap.org/img/w/${weather.icon}.png`} />
             {`${date.toLocaleDateString()}`}</span>);
         return (
             <div>
@@ -40,18 +40,5 @@ WeatherCard.propTypes = {
         maxTemp: PropTypes.number
     }).isRequired
 };
-
-WeatherCard.defaultProps = {
-    weather: {
-        date: new Date(),
-        icon: "",
-        description: "no description available",
-        humidity: 50,
-        minTemp: 0,
-        maxTemp: 99
-
-    }
-};
-
 
 export default WeatherCard;
