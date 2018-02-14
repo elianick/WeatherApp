@@ -52,7 +52,7 @@ class WeatherForecast extends React.Component {
     }
     componentDidMount() {
         this.loadByCurrentLocation();
-        console.log(this.props);
+      
 
     }
 
@@ -61,7 +61,6 @@ class WeatherForecast extends React.Component {
     render() {
         const { props: { loading, city, forecast, error, errorMessage } } = this;
         const LoadingComponent = () => loading ? <ProgressBar active now={100} /> : "";
-        console.log(city);
         return (
             <div>
                 <LoadingComponent />
@@ -69,7 +68,7 @@ class WeatherForecast extends React.Component {
                     <Row>
                         <Col xs={12}>
                             <Form horizontal>
-                                <FormGroup controlId="formControlsSelect">
+                                <FormGroup id="formControlsSelect">
                                     <Col xs={4} componentClass={ControlLabel}> Select City</Col>
                                     <Col xs={4}>
                                         <FormControl id="citySelect" componentClass="select" placeholder="select"                                           

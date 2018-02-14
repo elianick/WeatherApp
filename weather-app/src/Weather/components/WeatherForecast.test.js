@@ -1,11 +1,16 @@
-import {mount} from "enzyme";
+import {mount, configure} from "enzyme";
 import WeatherForecast from "./WeatherForecast";
 import React from "react";
+import Adapter from "enzyme-adapter-react-16";
+
+configure({adapter: new Adapter()});
 
 describe("WeatherForecast", () => {
     it("should render properly", () => {
         const props = {
             loading: false,
+            forecast: [],
+            error: false,
             city: "Valencia",
             loadDataByCityId: () => {
             },
@@ -15,8 +20,7 @@ describe("WeatherForecast", () => {
             }
         };
         const wrapper = mount(<WeatherForecast {...props}/>);
-      //  expect(wrapper.find('h1').text()).toBe('CityValencia');
-      //  expect(wrapper.find('small').text()).toBe('Valencia');
+        console.log(wrapper.text());
 
     });
 });
